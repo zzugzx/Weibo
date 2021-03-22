@@ -11,10 +11,10 @@
 		2B7068402608AB5000E4DB5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70683F2608AB5000E4DB5E /* AppDelegate.m */; };
 		2B7068432608AB5000E4DB5E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068422608AB5000E4DB5E /* SceneDelegate.m */; };
 		2B7068462608AB5000E4DB5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068452608AB5000E4DB5E /* ViewController.m */; };
-		2B7068492608AB5000E4DB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7068472608AB5000E4DB5E /* Main.storyboard */; };
 		2B70684B2608AB5100E4DB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B70684A2608AB5100E4DB5E /* Assets.xcassets */; };
 		2B70684E2608AB5100E4DB5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B70684C2608AB5100E4DB5E /* LaunchScreen.storyboard */; };
 		2B7068512608AB5100E4DB5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068502608AB5100E4DB5E /* main.m */; };
+		2B7068632608C76400E4DB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7068472608AB5000E4DB5E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +86,7 @@
 		2B7068592608C3E300E4DB5E /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
+				2B70684F2608AB5100E4DB5E /* Info.plist */,
 				2B70683E2608AB5000E4DB5E /* AppDelegate.h */,
 				2B70683F2608AB5000E4DB5E /* AppDelegate.m */,
 				2B7068412608AB5000E4DB5E /* SceneDelegate.h */,
@@ -93,7 +94,6 @@
 				2B7068472608AB5000E4DB5E /* Main.storyboard */,
 				2B70684A2608AB5100E4DB5E /* Assets.xcassets */,
 				2B70684C2608AB5100E4DB5E /* LaunchScreen.storyboard */,
-				2B70684F2608AB5100E4DB5E /* Info.plist */,
 				2B7068502608AB5100E4DB5E /* main.m */,
 			);
 			path = SupportFile;
@@ -173,9 +173,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B7068632608C76400E4DB5E /* Main.storyboard in Resources */,
 				2B70684E2608AB5100E4DB5E /* LaunchScreen.storyboard in Resources */,
 				2B70684B2608AB5100E4DB5E /* Assets.xcassets in Resources */,
-				2B7068492608AB5000E4DB5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DK9C899M7Q;
-				INFOPLIST_FILE = WeiBo/Info.plist;
+				INFOPLIST_FILE = WeiBo/SupportFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DK9C899M7Q;
-				INFOPLIST_FILE = WeiBo/Info.plist;
+				INFOPLIST_FILE = WeiBo/SupportFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
