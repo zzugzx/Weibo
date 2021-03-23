@@ -15,6 +15,10 @@
 		2B70684E2608AB5100E4DB5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B70684C2608AB5100E4DB5E /* LaunchScreen.storyboard */; };
 		2B7068512608AB5100E4DB5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068502608AB5100E4DB5E /* main.m */; };
 		2B7068632608C76400E4DB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7068472608AB5000E4DB5E /* Main.storyboard */; };
+		2B7068752608CAEE00E4DB5E /* WBMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068742608CAEE00E4DB5E /* WBMainPageViewController.m */; };
+		2B70687A2608CB3F00E4DB5E /* WBMainPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068792608CB3F00E4DB5E /* WBMainPageView.m */; };
+		2B7068802608CE4500E4DB5E /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70687F2608CE4500E4DB5E /* UIColor+Extension.m */; };
+		2B70688F2609C62600E4DB5E /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70688E2609C62600E4DB5E /* HMSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,14 @@
 		2B70684D2608AB5100E4DB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B70684F2608AB5100E4DB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B7068502608AB5100E4DB5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2B7068732608CAEE00E4DB5E /* WBMainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageViewController.h; sourceTree = "<group>"; };
+		2B7068742608CAEE00E4DB5E /* WBMainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageViewController.m; sourceTree = "<group>"; };
+		2B7068782608CB3F00E4DB5E /* WBMainPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageView.h; sourceTree = "<group>"; };
+		2B7068792608CB3F00E4DB5E /* WBMainPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageView.m; sourceTree = "<group>"; };
+		2B70687E2608CE4500E4DB5E /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		2B70687F2608CE4500E4DB5E /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		2B70688D2609C62600E4DB5E /* HMSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		2B70688E2609C62600E4DB5E /* HMSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		9A6377C7CF283A00624ACEA7 /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		C99D53813063883737CB1875 /* libPods-WeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F395F844A7D48A960E56E927 /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +89,9 @@
 		2B70683D2608AB5000E4DB5E /* WeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				2B70688C2609C5EA00E4DB5E /* WBKit */,
+				2B70687D2608CD8E00E4DB5E /* Extension */,
+				2B7068712608CA9200E4DB5E /* WBMainPage */,
 				2B70685B2608C41D00E4DB5E /* Controller */,
 				2B7068592608C3E300E4DB5E /* SupportFile */,
 			);
@@ -106,6 +121,51 @@
 				2B7068452608AB5000E4DB5E /* ViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2B7068712608CA9200E4DB5E /* WBMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				2B7068772608CB1600E4DB5E /* View */,
+				2B7068722608CAA400E4DB5E /* Controller */,
+			);
+			path = WBMainPage;
+			sourceTree = "<group>";
+		};
+		2B7068722608CAA400E4DB5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B7068732608CAEE00E4DB5E /* WBMainPageViewController.h */,
+				2B7068742608CAEE00E4DB5E /* WBMainPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2B7068772608CB1600E4DB5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B7068782608CB3F00E4DB5E /* WBMainPageView.h */,
+				2B7068792608CB3F00E4DB5E /* WBMainPageView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B70687D2608CD8E00E4DB5E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2B70687E2608CE4500E4DB5E /* UIColor+Extension.h */,
+				2B70687F2608CE4500E4DB5E /* UIColor+Extension.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2B70688C2609C5EA00E4DB5E /* WBKit */ = {
+			isa = PBXGroup;
+			children = (
+				2B70688D2609C62600E4DB5E /* HMSegmentedControl.h */,
+				2B70688E2609C62600E4DB5E /* HMSegmentedControl.m */,
+			);
+			path = WBKit;
 			sourceTree = "<group>";
 		};
 		8794633116FCCCDB26C06063 /* Frameworks */ = {
@@ -212,9 +272,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7068462608AB5000E4DB5E /* ViewController.m in Sources */,
+				2B70688F2609C62600E4DB5E /* HMSegmentedControl.m in Sources */,
+				2B7068752608CAEE00E4DB5E /* WBMainPageViewController.m in Sources */,
 				2B7068402608AB5000E4DB5E /* AppDelegate.m in Sources */,
+				2B7068802608CE4500E4DB5E /* UIColor+Extension.m in Sources */,
 				2B7068512608AB5100E4DB5E /* main.m in Sources */,
 				2B7068432608AB5000E4DB5E /* SceneDelegate.m in Sources */,
+				2B70687A2608CB3F00E4DB5E /* WBMainPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,11 @@
 //
 
 #import "ViewController.h"
+#import "WBMainPageViewController.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) WBMainPageViewController *mainPageVC;
 
 @end
 
@@ -15,7 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController pushViewController:self.mainPageVC animated:YES]; 
+}
+
+- (WBMainPageViewController *)mainPageVC {
+    if (!_mainPageVC) {
+        _mainPageVC = [[WBMainPageViewController alloc] init];
+    }
+    return _mainPageVC;
 }
 
 
