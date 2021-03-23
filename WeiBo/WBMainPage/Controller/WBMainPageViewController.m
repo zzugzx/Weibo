@@ -8,6 +8,7 @@
 #import "WBMainPageViewController.h"
 #import "UIColor+Extension.h"
 #import "HMSegmentedControl.h"
+#import <Masonry/Masonry.h>
 
 
 @interface WBMainPageViewController ()
@@ -38,21 +39,13 @@
     
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(add)];
     self.navigationItem.rightBarButtonItem = rightBtn;
-    
-    [self setupSegmentedControl];
-}
-
-- (void)setupSegmentedControl {
-    HMSegmentedControl *segmented = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"推荐", @"关注"]];
-    segmented.frame = CGRectMake(self.view.bounds.size.width / 2 - 100, 4, 200, 40);
-    segmented.backgroundColor = [UIColor clearColor];
-    segmented.selectionIndicatorHeight = 3.0f;
-    segmented.selectionIndicatorColor = [UIColor colorWithHexString:@"#F84416"];
-    segmented.selectionStyle = HMSegmentedControlTypeText;
-    segmented.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    self.segmentedControl = segmented;
-    [self.navigationController.navigationBar addSubview:segmented];
-    
+    [self.navigationController.navigationBar addSubview:self.segmentedControl];
+    [self.segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.navigationController.navigationBar).offset(125);
+        make.right.mas_equalTo(self.navigationController.navigationBar).offset(-125);
+        make.top.mas_equalTo(self.navigationController.navigationBar).offset(4);
+        make.height.mas_equalTo(40);
+    }];
 }
 
 - (IBAction)photo {
@@ -61,6 +54,18 @@
 
 - (IBAction)add {
     
+}
+
+- (HMSegmentedControl *)segmentedControl {
+    if (!_segmentedControl) {
+        _segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"关注", @"推荐"]];
+        _segmentedControl.backgroundColor = [UIColor clearColor];
+        _segmentedControl.selectionIndicatorHeight = 3.0f;
+        _segmentedControl.selectionIndicatorColor = [UIColor colorWithHexString:@"#F84416"];
+        _segmentedControl.selectionStyle = HMSegmentedControlTypeText;
+        _segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    }
+    return _segmentedControl;
 }
 
 @end
