@@ -16,9 +16,11 @@
 		2B7068512608AB5100E4DB5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068502608AB5100E4DB5E /* main.m */; };
 		2B7068632608C76400E4DB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7068472608AB5000E4DB5E /* Main.storyboard */; };
 		2B7068752608CAEE00E4DB5E /* WBMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068742608CAEE00E4DB5E /* WBMainPageViewController.m */; };
-		2B70687A2608CB3F00E4DB5E /* WBMainPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068792608CB3F00E4DB5E /* WBMainPageView.m */; };
 		2B7068802608CE4500E4DB5E /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70687F2608CE4500E4DB5E /* UIColor+Extension.m */; };
 		2B70688F2609C62600E4DB5E /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70688E2609C62600E4DB5E /* HMSegmentedControl.m */; };
+		2B7068932609E1BA00E4DB5E /* WBMainPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068922609E1BA00E4DB5E /* WBMainPageScrollView.m */; };
+		2B7068992609E6B400E4DB5E /* WBMainPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068982609E6B400E4DB5E /* WBMainPageModel.m */; };
+		2B70689E2609EEEB00E4DB5E /* WBMainPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70689D2609EEEB00E4DB5E /* WBMainPageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +38,16 @@
 		2B7068502608AB5100E4DB5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B7068732608CAEE00E4DB5E /* WBMainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageViewController.h; sourceTree = "<group>"; };
 		2B7068742608CAEE00E4DB5E /* WBMainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageViewController.m; sourceTree = "<group>"; };
-		2B7068782608CB3F00E4DB5E /* WBMainPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageView.h; sourceTree = "<group>"; };
-		2B7068792608CB3F00E4DB5E /* WBMainPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageView.m; sourceTree = "<group>"; };
 		2B70687E2608CE4500E4DB5E /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		2B70687F2608CE4500E4DB5E /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		2B70688D2609C62600E4DB5E /* HMSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		2B70688E2609C62600E4DB5E /* HMSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		2B7068912609E1BA00E4DB5E /* WBMainPageScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageScrollView.h; sourceTree = "<group>"; };
+		2B7068922609E1BA00E4DB5E /* WBMainPageScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageScrollView.m; sourceTree = "<group>"; };
+		2B7068972609E6B400E4DB5E /* WBMainPageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageModel.h; sourceTree = "<group>"; };
+		2B7068982609E6B400E4DB5E /* WBMainPageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageModel.m; sourceTree = "<group>"; };
+		2B70689C2609EEEB00E4DB5E /* WBMainPageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBMainPageTableViewCell.h; sourceTree = "<group>"; };
+		2B70689D2609EEEB00E4DB5E /* WBMainPageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBMainPageTableViewCell.m; sourceTree = "<group>"; };
 		9A6377C7CF283A00624ACEA7 /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		C99D53813063883737CB1875 /* libPods-WeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F395F844A7D48A960E56E927 /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		2B7068712608CA9200E4DB5E /* WBMainPage */ = {
 			isa = PBXGroup;
 			children = (
+				2B7068962609E69E00E4DB5E /* Model */,
 				2B7068772608CB1600E4DB5E /* View */,
 				2B7068722608CAA400E4DB5E /* Controller */,
 			);
@@ -144,8 +151,10 @@
 		2B7068772608CB1600E4DB5E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B7068782608CB3F00E4DB5E /* WBMainPageView.h */,
-				2B7068792608CB3F00E4DB5E /* WBMainPageView.m */,
+				2B7068912609E1BA00E4DB5E /* WBMainPageScrollView.h */,
+				2B7068922609E1BA00E4DB5E /* WBMainPageScrollView.m */,
+				2B70689C2609EEEB00E4DB5E /* WBMainPageTableViewCell.h */,
+				2B70689D2609EEEB00E4DB5E /* WBMainPageTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +175,15 @@
 				2B70688E2609C62600E4DB5E /* HMSegmentedControl.m */,
 			);
 			path = WBKit;
+			sourceTree = "<group>";
+		};
+		2B7068962609E69E00E4DB5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B7068972609E6B400E4DB5E /* WBMainPageModel.h */,
+				2B7068982609E6B400E4DB5E /* WBMainPageModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8794633116FCCCDB26C06063 /* Frameworks */ = {
@@ -272,13 +290,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7068462608AB5000E4DB5E /* ViewController.m in Sources */,
+				2B70689E2609EEEB00E4DB5E /* WBMainPageTableViewCell.m in Sources */,
+				2B7068932609E1BA00E4DB5E /* WBMainPageScrollView.m in Sources */,
 				2B70688F2609C62600E4DB5E /* HMSegmentedControl.m in Sources */,
 				2B7068752608CAEE00E4DB5E /* WBMainPageViewController.m in Sources */,
+				2B7068992609E6B400E4DB5E /* WBMainPageModel.m in Sources */,
 				2B7068402608AB5000E4DB5E /* AppDelegate.m in Sources */,
 				2B7068802608CE4500E4DB5E /* UIColor+Extension.m in Sources */,
 				2B7068512608AB5100E4DB5E /* main.m in Sources */,
 				2B7068432608AB5000E4DB5E /* SceneDelegate.m in Sources */,
-				2B70687A2608CB3F00E4DB5E /* WBMainPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
