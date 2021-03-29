@@ -13,8 +13,8 @@
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) WBMainPageViewController *viewController;
-@property (nonatomic, strong) UITableView *favTableVew;
-@property (nonatomic, strong) UITableView *recommondTableVew;
+@property (nonatomic, strong) UITableView *favTableView;
+@property (nonatomic, strong) UITableView *recommondTableView;
 @property (nonatomic, assign) BOOL isRecommondPage;
 
 @end
@@ -27,22 +27,24 @@
     if (self) {
         self.items = [[NSMutableArray alloc] init];
         self.viewController = viewController;
-        self.recommondTableVew = recommondTableView;
-        self.favTableVew = favTableView;
+        self.recommondTableView = recommondTableView;
+        self.favTableView = favTableView;
         
         [self configTableView];
+        [self.favTableView reloadData];
+        [self.recommondTableView reloadData];
     }
     return self;
 }
 
 - (void)configTableView {
-    self.favTableVew.delegate = self;
-    self.favTableVew.dataSource = self;
-    self.recommondTableVew.delegate = self;
-    self.recommondTableVew.dataSource = self;
+    self.favTableView.delegate = self;
+    self.favTableView.dataSource = self;
+    self.recommondTableView.delegate = self;
+    self.recommondTableView.dataSource = self;
     
-    [self.favTableVew registerClass:[WBMainPageTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
-    [self.recommondTableVew registerClass:[WBMainPageTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
+    [self.favTableView registerClass:[WBMainPageTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
+    [self.recommondTableView registerClass:[WBMainPageTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
 }
 
 #pragma mark - UITableViewDataSource
@@ -56,29 +58,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WBMainPageTableViewCell *cell = nil;
-//    if (self.isRecommondPage) {
-//        cell = [self.recommondTableVew dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
-//    } else {
-//        cell = [self.favTableVew dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
-//    }
-    if (cell == nil) {
-        cell = [[WBMainPageTableViewCell alloc] init];
+    if (self.isRecommondPage) {
+        WBMainPageTableViewCell *cell = [self.recommondTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
+        return cell;
+    } else {
+        WBMainPageTableViewCell *cell = [self.favTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
+        return cell;
     }
+    [cell refreshWithData:nil];
     return cell;
-}
-
-#pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0;
-}
-
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
 }
 @end

@@ -30,6 +30,8 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.mainPageModel = [[WBMainPageModel alloc] initWithViewController:self andFavTableVIew:self.scrollView.favTableView andRecommodTableView:self.scrollView.recommondTableView];
     [self setupUI];
+    [self.scrollView.favTableView reloadData];
+    [self.scrollView.recommondTableView reloadData];
 }
 
 - (void)setupUI {
@@ -37,6 +39,10 @@
     [self setupNavBar];
     
     [self.view addSubview:self.scrollView];
+}
+
+- (IBAction)refresh {
+    
 }
 
 - (void)setupNavBar {

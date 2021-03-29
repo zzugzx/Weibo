@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WBMainPageTableViewCell : UITableViewCell
 
 
-- (instancetype)init;
+- (void)refreshWithData:(id)data;
 
 @end
 

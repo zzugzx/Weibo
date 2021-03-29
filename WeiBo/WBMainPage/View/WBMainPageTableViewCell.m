@@ -30,9 +30,9 @@
 
 @implementation WBMainPageTableViewCell
 
-- (instancetype)init
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier
 {
-    self = [super init];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupUI];
@@ -46,7 +46,7 @@
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
     }];
-    
+    self.bgView = self.contentView;
     [self.bgView addSubview:self.lineView];
     [self.bgView addSubview:self.headImageView];
     [self.bgView addSubview:self.timeLabel];
@@ -65,13 +65,13 @@
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headImageView.mas_right).offset(10);
-        make.height.mas_equalTo(23);
+        make.height.mas_equalTo(20);
         make.top.mas_equalTo(self.headImageView);
     }];
     
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.height.mas_equalTo(self.nameLabel);
-        make.top.mas_equalTo(self.nameLabel.mas_bottom).offset(5);
+        make.top.mas_equalTo(self.nameLabel.mas_bottom).offset(2);
     }];
     
     [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,40 +90,33 @@
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.headImageView.mas_bottom).offset(10);
         make.left.mas_equalTo(self.headImageView);
-        make.right.mas_equalTo(self.closeBtn.mas_left);
+        make.right.mas_equalTo(self.closeBtn.mas_left).offset(10);
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView.mas_bottom).offset(-40);
+        make.top.mas_equalTo(self.contentLabel.mas_bottom).offset(20);
         make.left.right.mas_equalTo(self.bgView);
         make.height.mas_equalTo(3);
     }];
     
-    CGFloat length = (self.contentView.frame.size.width) / 3;
-    [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    NSArray *array = [NSArray arrayWithObjects:self.btn1, self.btn2, self.btn3, nil];
+    [array mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    [array mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.lineView).offset(5);
-        make.left.mas_equalTo(self.bgView).offset(30);
-        make.right.mas_equalTo(self.bgView.mas_left).offset(30 + length);
         make.height.mas_equalTo(30);
+        make.bottom.mas_equalTo(self.contentView).offset(-5);
     }];
+}
+
+- (void)refreshWithData:(id)data {
     
-    [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.height.mas_equalTo(self.btn1);
-        make.left.mas_equalTo(self.btn1.mas_right);
-        make.right.mas_equalTo(self.btn1.mas_right).offset(length);
-    }];
-    
-    [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.height.mas_equalTo(self.btn1);
-        make.left.mas_equalTo(self.btn2.mas_right);
-        make.right.mas_equalTo(self.btn2.mas_right).offset(length);
-    }];
 }
 
 - (UIView *)bgView {
     if (!_bgView) {
         _bgView = [[UIView alloc] init];
         _bgView.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
+        [_bgView sizeToFit];
     }
     return _bgView;
 }
@@ -139,7 +132,6 @@
 - (UIImageView *)headImageView {
     if (!_headImageView) {
         _headImageView = [[UIImageView alloc] init];
-        
     }
     return _headImageView;
 }
@@ -147,6 +139,9 @@
 - (UILabel *)timeLabel {
     if (!_timeLabel) {
         _timeLabel = [[UILabel alloc] init];
+        _timeLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
+        _timeLabel.textColor = [UIColor colorWithHexString:@"#A3A3A3"];
+        _timeLabel.text = @"昨天 19:04";
     }
     return _timeLabel;
 }
@@ -155,6 +150,9 @@
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
         [_contentLabel sizeToFit];
+        _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _contentLabel.numberOfLines = 0;
+        _contentLabel.text = @"啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊";
     }
     return _contentLabel;
 }
@@ -163,6 +161,7 @@
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
         [_nameLabel sizeToFit];
+        _nameLabel.text = @"Gzx";
     }
     return _nameLabel;
 }
@@ -187,6 +186,9 @@
     if (!_btn1) {
         _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_btn1 setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+        [_btn1 setTitle:@"123" forState:UIControlStateNormal];
+        [_btn1 setTitleColor:[UIColor colorWithHexString:@"#A3A3A3"] forState:UIControlStateNormal];
+        _btn1.titleLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
     }
     return _btn1;
 }
@@ -195,6 +197,9 @@
     if (!_btn2) {
         _btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_btn2 setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
+        [_btn2 setTitle:@"123" forState:UIControlStateNormal];
+        [_btn2 setTitleColor:[UIColor colorWithHexString:@"#A3A3A3"] forState:UIControlStateNormal];
+        _btn2.titleLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
     }
     return _btn2;
 }
@@ -203,6 +208,9 @@
     if (!_btn3) {
         _btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_btn3 setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
+        [_btn3 setTitle:@"321" forState:UIControlStateNormal];
+        [_btn3 setTitleColor:[UIColor colorWithHexString:@"#A3A3A3"] forState:UIControlStateNormal];
+        _btn3.titleLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
     }
     return _btn3;
 }
