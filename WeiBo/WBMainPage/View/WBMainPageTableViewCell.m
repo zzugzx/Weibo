@@ -141,7 +141,6 @@
         _timeLabel = [[UILabel alloc] init];
         _timeLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
         _timeLabel.textColor = [UIColor colorWithHexString:@"#A3A3A3"];
-        _timeLabel.text = @"昨天 19:04";
     }
     return _timeLabel;
 }
@@ -152,7 +151,6 @@
         [_contentLabel sizeToFit];
         _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _contentLabel.numberOfLines = 0;
-        _contentLabel.text = @"啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊";
     }
     return _contentLabel;
 }
@@ -161,7 +159,6 @@
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
         [_nameLabel sizeToFit];
-        _nameLabel.text = @"Gzx";
     }
     return _nameLabel;
 }
@@ -186,7 +183,6 @@
     if (!_btn1) {
         _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_btn1 setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
-        [_btn1 setTitle:@"123" forState:UIControlStateNormal];
         [_btn1 setTitleColor:[UIColor colorWithHexString:@"#A3A3A3"] forState:UIControlStateNormal];
         _btn1.titleLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
     }
@@ -197,7 +193,6 @@
     if (!_btn2) {
         _btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_btn2 setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
-        [_btn2 setTitle:@"123" forState:UIControlStateNormal];
         [_btn2 setTitleColor:[UIColor colorWithHexString:@"#A3A3A3"] forState:UIControlStateNormal];
         _btn2.titleLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
     }
@@ -208,7 +203,6 @@
     if (!_btn3) {
         _btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_btn3 setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
-        [_btn3 setTitle:@"321" forState:UIControlStateNormal];
         [_btn3 setTitleColor:[UIColor colorWithHexString:@"#A3A3A3"] forState:UIControlStateNormal];
         _btn3.titleLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:13];
     }

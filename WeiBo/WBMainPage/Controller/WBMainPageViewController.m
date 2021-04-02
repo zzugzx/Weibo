@@ -30,8 +30,6 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.mainPageModel = [[WBMainPageModel alloc] initWithViewController:self andFavTableVIew:self.scrollView.favTableView andRecommodTableView:self.scrollView.recommondTableView];
     [self setupUI];
-    [self.scrollView.favTableView reloadData];
-    [self.scrollView.recommondTableView reloadData];
 }
 
 - (void)setupUI {
@@ -39,10 +37,6 @@
     [self setupNavBar];
     
     [self.view addSubview:self.scrollView];
-}
-
-- (IBAction)refresh {
-    
 }
 
 - (void)setupNavBar {
@@ -62,14 +56,6 @@
     }];
 }
 
-- (IBAction)photo {
-    
-}
-
-- (IBAction)add {
-    
-}
-
 - (HMSegmentedControl *)segmentedControl {
     if (!_segmentedControl) {
         _segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"关注", @"推荐"]];
@@ -78,6 +64,7 @@
         _segmentedControl.selectionIndicatorColor = [UIColor colorWithHexString:@"#F84416"];
         _segmentedControl.selectionStyle = HMSegmentedControlTypeText;
         _segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+        [_segmentedControl setPageScrollView:self.scrollView];
     }
     return _segmentedControl;
 }
@@ -92,6 +79,19 @@
         _scrollView.bounces = NO;
     }
     return _scrollView;
+}
+
+#pragma mark - Action
+- (IBAction)refresh {
+    
+}
+
+- (IBAction)photo {
+    
+}
+
+- (IBAction)add {
+    
 }
 
 @end
