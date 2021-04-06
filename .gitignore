@@ -67,4 +67,14 @@ fastlane/test_output
 WeiBo.xcodeproj/project.pbxproj
 WeiBo.xcodeproj/xcuserdata/bytedance.xcuserdatad/xcschemes/xcschememanagement.plist
 WeiBo.xcworkspace/xcshareddata/
+Podfile.lock
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo-acknowledgements.markdown
+Support Files/Pods-WeiBo/Pods-WeiBo-acknowledgements.plist
+Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig
+Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig
+WeiBo.xcodeproj/project.pbxproj
+WeiBo.xcodeproj/xcuserdata/bytedance.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/
 iOSInjectionProject/

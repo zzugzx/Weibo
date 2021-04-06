@@ -29,7 +29,6 @@
 - (void)setupUI {
     [self addSubview:self.recommondTableView];
     [self addSubview:self.favTableView];
-    
 }
 
 - (UITableView *)recommondTableView {

@@ -31,6 +31,7 @@
         self.favTableView = favTableView;
         
         [self configTableView];
+        [self configData];
         [self.favTableView reloadData];
         [self.recommondTableView reloadData];
     }
@@ -47,6 +48,10 @@
     [self.recommondTableView registerClass:[WBMainPageTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
 }
 
+- (void)configData {
+    
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
@@ -59,11 +64,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WBMainPageTableViewCell *cell = nil;
     if (self.isRecommondPage) {
-        WBMainPageTableViewCell *cell = [self.recommondTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
-        return cell;
+        cell = [self.recommondTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
     } else {
-        WBMainPageTableViewCell *cell = [self.favTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
-        return cell;
+        cell = [self.favTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
     }
     [cell refreshWithData:nil];
     return cell;
