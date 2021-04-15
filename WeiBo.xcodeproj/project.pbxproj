@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A8605423E860293744396BE /* libPods-WeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C99D53813063883737CB1875 /* libPods-WeiBo.a */; };
 		2B405B4D261C39A4000D1CFD /* content in Resources */ = {isa = PBXBuildFile; fileRef = 2B405B4C261C39A4000D1CFD /* content */; };
+		2B405B6D261C4987000D1CFD /* WBContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B405B6C261C4987000D1CFD /* WBContentModel.m */; };
 		2B7068402608AB5000E4DB5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B70683F2608AB5000E4DB5E /* AppDelegate.m */; };
 		2B7068432608AB5000E4DB5E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068422608AB5000E4DB5E /* SceneDelegate.m */; };
 		2B7068462608AB5000E4DB5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7068452608AB5000E4DB5E /* ViewController.m */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		2B405B4C261C39A4000D1CFD /* content */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		2B405B6B261C4987000D1CFD /* WBContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBContentModel.h; sourceTree = "<group>"; };
+		2B405B6C261C4987000D1CFD /* WBContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBContentModel.m; sourceTree = "<group>"; };
 		2B70683B2608AB5000E4DB5E /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B70683E2608AB5000E4DB5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B70683F2608AB5000E4DB5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 			children = (
 				2B7068972609E6B400E4DB5E /* WBMainPageModel.h */,
 				2B7068982609E6B400E4DB5E /* WBMainPageModel.m */,
+				2B405B6B261C4987000D1CFD /* WBContentModel.h */,
+				2B405B6C261C4987000D1CFD /* WBContentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				2B7068462608AB5000E4DB5E /* ViewController.m in Sources */,
 				2B70689E2609EEEB00E4DB5E /* WBMainPageTableViewCell.m in Sources */,
 				2B7068932609E1BA00E4DB5E /* WBMainPageScrollView.m in Sources */,
+				2B405B6D261C4987000D1CFD /* WBContentModel.m in Sources */,
 				2B70688F2609C62600E4DB5E /* HMSegmentedControl.m in Sources */,
 				2B7068752608CAEE00E4DB5E /* WBMainPageViewController.m in Sources */,
 				2B7068992609E6B400E4DB5E /* WBMainPageModel.m in Sources */,

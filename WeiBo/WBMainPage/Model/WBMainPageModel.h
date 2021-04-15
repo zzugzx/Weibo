@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WBMainPageModel : NSObject
-
+@property (nonatomic, assign) BOOL isRecommondPage;
 
 - (instancetype)initWithViewController:(WBMainPageViewController *)viewController andFavTableVIew:(UITableView *)favTableView andRecommodTableView:(UITableView *)recommondTableView;
 @end

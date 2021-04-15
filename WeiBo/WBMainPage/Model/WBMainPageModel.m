@@ -8,14 +8,15 @@
 #import "WBMainPageModel.h"
 #import "WBMainPageViewController.h"
 #import "WBMainPageTableViewCell.h"
+#import "WBContentModel.h"
 
 @interface WBMainPageModel () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSArray<WBStatusesModel> *items;
 @property (nonatomic, strong) WBMainPageViewController *viewController;
 @property (nonatomic, strong) UITableView *favTableView;
 @property (nonatomic, strong) UITableView *recommondTableView;
-@property (nonatomic, assign) BOOL isRecommondPage;
+
 
 @end
 
@@ -25,7 +26,6 @@
 {
     self = [super init];
     if (self) {
-        self.items = [[NSMutableArray alloc] init];
         self.viewController = viewController;
         self.recommondTableView = recommondTableView;
         self.favTableView = favTableView;
@@ -49,12 +49,16 @@
 }
 
 - (void)configData {
-    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"content" ofType:nil];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    WBContentModel *model = [[WBContentModel alloc] initWithDictionary:dict error:nil];
+    self.items = model.statuses;
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.items.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,7 +72,7 @@
     } else {
         cell = [self.favTableView dequeueReusableCellWithIdentifier:NSStringFromClass([WBMainPageTableViewCell class])];
     }
-    [cell refreshWithData:nil];
+    [cell refreshWithData:self.items[indexPath.row]];
     return cell;
 }
 @end

@@ -8,6 +8,7 @@
 #import "WBMainPageTableViewCell.h"
 #import "UIColor+Extension.h"
 #import <Masonry/Masonry.h>
+#import "WBContentModel.h"
 
 @interface WBMainPageTableViewCell ()
 
@@ -66,7 +67,7 @@
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headImageView.mas_right).offset(10);
         make.height.mas_equalTo(20);
-        make.top.mas_equalTo(self.headImageView);
+        make.top.mas_equalTo(self.headImageView).offset(5);
     }];
     
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,7 +110,38 @@
 }
 
 - (void)refreshWithData:(id)data {
+    WBStatusesModel *model = (WBStatusesModel *)data;
     
+    NSURL *url = [[NSURL alloc] initWithString:model.user.avatarLarge];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
+    self.headImageView.image = image;
+    
+    self.timeLabel.text = model.timestampText;
+    self.nameLabel.text = model.user.name;
+    self.contentLabel.attributedText = [[NSAttributedString alloc] initWithString:model.text];
+    
+    NSString *number = nil;
+    if (model.repostsCount >= 10000) {
+        number = [NSString stringWithFormat:@"%.1f万", model.repostsCount / 10000.0];
+    } else {
+        number = [NSString stringWithFormat:@"%lu", model.repostsCount];
+    }
+    [self.btn1 setTitle:number forState:UIControlStateNormal];
+    
+    if (model.commentsCount >= 10000) {
+        number = [NSString stringWithFormat:@"%.1f万", model.commentsCount / 10000.0];
+    } else {
+        number = [NSString stringWithFormat:@"%lu", model.commentsCount];
+    }
+    [self.btn2 setTitle:number forState:UIControlStateNormal];
+    
+    if (model.attitudesCount >= 10000) {
+        number = [NSString stringWithFormat:@"%.1f万", model.attitudesCount / 10000.0];
+    } else {
+        number = [NSString stringWithFormat:@"%lu", model.attitudesCount];
+    }
+    [self.btn3 setTitle:number forState:UIControlStateNormal];
 }
 
 - (UIView *)bgView {
@@ -132,6 +164,8 @@
 - (UIImageView *)headImageView {
     if (!_headImageView) {
         _headImageView = [[UIImageView alloc] init];
+        _headImageView.layer.cornerRadius = 25;
+        _headImageView.layer.masksToBounds = YES;
     }
     return _headImageView;
 }
@@ -149,6 +183,7 @@
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
         [_contentLabel sizeToFit];
+        _contentLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:15];
         _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _contentLabel.numberOfLines = 0;
     }
@@ -158,6 +193,7 @@
 - (UILabel *)nameLabel {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
+        _nameLabel.font = [UIFont fontWithName:@"PingFangTC-Regular" size:15];
         [_nameLabel sizeToFit];
     }
     return _nameLabel;

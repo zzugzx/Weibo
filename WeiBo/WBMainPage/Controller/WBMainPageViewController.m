@@ -64,6 +64,16 @@
         _segmentedControl.selectionIndicatorColor = [UIColor colorWithHexString:@"#F84416"];
         _segmentedControl.selectionStyle = HMSegmentedControlTypeText;
         _segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+        __weak typeof(self) weakSelf = self;
+        _segmentedControl.indexChangeBlock = ^(NSInteger index) {
+            if (index == 0) {
+                weakSelf.mainPageModel.isRecommondPage = NO;
+                weakSelf.scrollView.contentOffset = CGPointMake(0, 0);
+            } else {
+                weakSelf.mainPageModel.isRecommondPage = YES;
+                weakSelf.scrollView.contentOffset = CGPointMake(weakSelf.scrollView.frame.size.width, 0);
+            }
+        };
         [_segmentedControl setPageScrollView:self.scrollView];
     }
     return _segmentedControl;
