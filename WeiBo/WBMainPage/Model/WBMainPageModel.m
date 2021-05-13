@@ -32,8 +32,6 @@
         
         [self configTableView];
         [self configData];
-        [self.favTableView reloadData];
-        [self.recommondTableView reloadData];
     }
     return self;
 }

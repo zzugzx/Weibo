@@ -148,7 +148,6 @@
     if (!_bgView) {
         _bgView = [[UIView alloc] init];
         _bgView.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
-        [_bgView sizeToFit];
     }
     return _bgView;
 }
